@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('event_name');
+            $table->dateTimeTz('event_date', precision: 0);
+            $table->text('description');
+            $table->boolean('checkin');
         });
     }
 
